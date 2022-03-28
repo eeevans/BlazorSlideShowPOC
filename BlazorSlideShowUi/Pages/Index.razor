@@ -1,44 +1,14 @@
 ﻿@page "/"
 
 <div class="row">
-    <button class="btn" type="button" @onclick="DoSwitch">Switch</button>
-</div>
-<div class="image-container">
-    <img class="@GetImage1Class()" src="@image1Location"/>
-    <img class="@GetImage2Class()" src="@image2Location"/>
+    <div>
+        <a class="btn" href="/SlideShow">SlideShow</a>
+    </div>
+    <div>
+        <a class="btn" href="/RemoteControl">Remote Control</a>
+    </div>
 </div>
 
 @code
 {
-    private string image1Location = "images/ceyda-ciftci-3d1hAM0vOLA-unsplash.jpg";
-    private string image2Location = "images/daan-evers-tKN1WXrzQ3s-unsplash.jpg";
-    private bool showImage1 = true;
-
-    private string GetImage1Class()
-    {
-        if (showImage1)
-            return "image1-top";
-        else
-        {
-            return "image1 image-hidden";
-        }
-    }
-
-    private string GetImage2Class()
-    {
-        if (showImage1 == false)
-            return "image2-top";
-        else
-        {
-            return "image2 image-hidden";
-        }
-
-    }
-
-    private void DoSwitch()
-    {
-        showImage1 = !showImage1;
-        StateHasChanged();
-
-    }
 }

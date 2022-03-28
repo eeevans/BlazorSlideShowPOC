@@ -1,0 +1,35 @@
+﻿@page "/RemoteControl"
+@using EventAggregator.Blazor
+
+@inject IImageProviderService ImageProvider
+@inject IEventAggregator Aggregator
+
+
+
+@if (_imagePaths is not null)
+{
+    <h1>Images</h1>
+    <div class="row">
+    @foreach (var imagePath in _imagePaths)
+    {
+        <div class="image-container">
+            <img src="images/@imagePath" @onclick="(() => SelectImage(imagePath))"/>
+        </div>
+    }
+    </div>
+}
+
+@code {
+    private IList<string> _imagePaths;
+
+    protected override void OnInitialized()
+    {
+        _imagePaths = ImageProvider.Images;
+    }
+
+    private void SelectImage(string imagePath)
+    {
+        Aggregator.PublishAsync(new ImageSelectedMessage(imagePath));
+    }
+
+}
