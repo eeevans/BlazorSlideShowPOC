@@ -1,0 +1,25 @@
+﻿html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.image-container {
+    position: relative;
+    margin: 0 auto;
+    height: 600px;
+    width: 600px;
+}
+
+img {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -o-transition: opacity .25s ease-in-out;
+    transition: opacity .25s ease-in-out;
+}
+
+.image-hidden {
+    opacity: 0;
+}
