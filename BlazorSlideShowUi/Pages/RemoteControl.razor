@@ -12,8 +12,8 @@
     <div class="row">
     @foreach (var imagePath in _imagePaths)
     {
-        <div class="image-container">
-            <img src="images/@imagePath" @onclick="(() => SelectImage(imagePath))"/>
+        <div class="image-card">
+            <img class="image" src="images/@imagePath" @onclick="(() => SelectImage(imagePath))"/>
         </div>
     }
     </div>

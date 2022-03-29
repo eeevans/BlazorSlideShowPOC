@@ -1,25 +1,72 @@
 ﻿html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+
+.mud-main-content,
+.mud-container,
+.mud-container.mud-container-maxwidth-lg,
+.my-16,
+.pt-16 {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .image-container {
     position: relative;
-    margin: 0 auto;
-    height: 600px;
-    width: 600px;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
 }
 
-img {
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    -webkit-transition: opacity .25s ease-in-out;
-    -moz-transition: opacity .25s ease-in-out;
-    -o-transition: opacity .25s ease-in-out;
-    transition: opacity .25s ease-in-out;
-}
+    .image-container img {
+        position: absolute;
+        left: 0;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100vw;
+        height: 100vh;
+        object-fit: contain;
+        -webkit-transition: opacity .5s ease-in-out;
+        -moz-transition: opacity .5s ease-in-out;
+        -o-transition: opacity .5s ease-in-out;
+        transition: opacity .5s ease-in-out;
+    }
 
 .image-hidden {
     opacity: 0;
+}
+
+.image-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 2rem 5rem;
+    padding: 2rem;
+    height: 50vh;
+    width: 50vw;
+}
+
+.image-card img {
+    width: 50%;
+    height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .image-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-content: center;
+        flex-wrap: wrap;
+        margin: 2px 5px;
+        padding: 3px;
+        height: 300px;
+        width: 300px;
+    }
+
+
 }
